@@ -22,8 +22,9 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Configurando que el Toolbar como ActionBarActivity
+        //Configurando que el Toolbar como ActionBar
         Toolbar toolbar = (Toolbar) findViewById(R.id.activity_my_toolbar);
+        //En este ejemplo, ocultamos el titulo de la aplicación, esto es opcional
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
@@ -60,14 +61,28 @@ public class MainActivity extends ActionBarActivity {
         pusheen5.setName("Stormy");
         pusheen5.setPasTime("adventurer");
         pusheens.add(pusheen5);
-
         //Fin de nuestro dataset
 
+        //Configuración del recyclerView, con nuestro dataSet y nuestro Adapter
+
+        //Aqui buscamos el Widget recyclerView
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+
+        //A pesar del tamaño de la pantalla, asegurar que los elementos se vean siempre igual.
         recyclerView.setHasFixedSize(true);
+
+        //Configuramos la animación por defecto
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        //Ahora le pasamos nuestro dataset y la forma en que se vera cada fila.
         recyclerView.setAdapter(new PusheenAdapter(pusheens, R.layout.row));
+
+        //Importante, ahora podemos indicar si mostrar los elementos como fila o como grilla, en este
+        //caso setLayoutManager() esta  configurado como grilla de una columna, es por es eso que se ve
+        //como fila, recordar que el mismo resultado se obtiene con
+        // recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setLayoutManager(new GridLayoutManager(this,1));
+
 
     }
 

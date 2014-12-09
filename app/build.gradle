@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "la.mejorando.prelollipopmaterialdesign"
-        minSdkVersion 16
+        minSdkVersion 14
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
@@ -26,9 +26,16 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Necesario para usar Toolbar y dar ese Aspecto Material
     compile 'com.android.support:appcompat-v7:21.0.2'
-    compile 'com.android.support:cardview-v7:21.0.0'
+
+    //Libreria para agregar un Floating Action Button
     compile 'com.getbase:floatingactionbutton:1.2.1'
+
+    //Libreria para usar un RecyclerView
     compile 'com.android.support:recyclerview-v7:21.0.0'
+
+    //Libreria para volver circular una Imagen
     compile 'de.hdodenhof:circleimageview:1.2.1'
 }
