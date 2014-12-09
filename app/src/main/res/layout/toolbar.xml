@@ -3,7 +3,7 @@
     android:id="@+id/activity_my_toolbar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minHeight="100dp"
+    android:minHeight="?attr/actionBarSize"
     android:background="@color/primary_color"
     app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>

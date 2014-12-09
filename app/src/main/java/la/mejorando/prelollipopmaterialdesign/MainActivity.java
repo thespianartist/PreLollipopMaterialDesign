@@ -25,7 +25,7 @@ public class MainActivity extends ActionBarActivity {
         //Configurando que el Toolbar como ActionBar
         Toolbar toolbar = (Toolbar) findViewById(R.id.activity_my_toolbar);
         //En este ejemplo, ocultamos el titulo de la aplicación, esto es opcional
-        toolbar.setTitle("");
+        toolbar.setTitle("I am Pusheen");
         setSupportActionBar(toolbar);
 
 
@@ -61,6 +61,26 @@ public class MainActivity extends ActionBarActivity {
         pusheen5.setName("Stormy");
         pusheen5.setPasTime("adventurer");
         pusheens.add(pusheen5);
+
+        Pusheen pusheen6 = new Pusheen();
+        pusheen6.setId(1);
+        pusheen6.setName("Pusheen");
+        pusheen6.setPasTime("Blogger");
+        pusheens.add(pusheen6);
+
+        Pusheen pusheen7 = new Pusheen();
+        pusheen7.setId(2);
+        pusheen7.setName("Pusheen");
+        pusheen7.setPasTime("Sculpor");
+        pusheens.add(pusheen7);
+
+        Pusheen pusheen8 = new Pusheen();
+        pusheen8.setId(3);
+        pusheen8.setName("Stormy");
+        pusheen8.setPasTime("Mage");
+        pusheens.add(pusheen8);
+
+
         //Fin de nuestro dataset
 
         //Configuración del recyclerView, con nuestro dataSet y nuestro Adapter
