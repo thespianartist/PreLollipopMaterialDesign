@@ -16,13 +16,15 @@
 
 package la.mejorando.prelollipopmaterialdesign.views;
 
-import android.R;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
+import la.mejorando.prelollipopmaterialdesign.R;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -65,16 +67,12 @@ class SlidingTabStrip extends LinearLayout {
         final float density = getResources().getDisplayMetrics().density;
 
         TypedValue outValue = new TypedValue();
-        context.getTheme().resolveAttribute(R.attr.colorForeground, outValue, true);
+        context.getTheme().resolveAttribute(android.R.attr.foreground, outValue, true);
         final int themeForegroundColor =  outValue.data;
 
-        TypedValue backgroundValue = new TypedValue();
-        context.getTheme().resolveAttribute(R.attr.colorPrimary, outValue, true);
-        final int themeBackground =  outValue.data;
-
-        TypedValue accentValue = new TypedValue();
-        context.getTheme().resolveAttribute(R.attr.colorAccent, outValue, true);
-        final int accentColor =  outValue.data;
+        //Compatibilidad con Android < Lollipop
+        final int themeBackground =  getResources().getColor(R.color.primary_color);
+        final int accentColor =  getResources().getColor(R.color.accent_color);
 
         mDefaultBottomBorderColor = setColorAlpha(themeForegroundColor,
                 DEFAULT_BOTTOM_BORDER_COLOR_ALPHA);
@@ -96,6 +94,8 @@ class SlidingTabStrip extends LinearLayout {
         mDividerPaint.setStrokeWidth((int) (0));
 
         setBackgroundColor(themeBackground);
+
+
     }
 
     void setCustomTabColorizer(SlidingTabLayout.TabColorizer customTabColorizer) {
