@@ -95,4 +95,6 @@ public class PusheenAdapter extends RecyclerView.Adapter<PusheenAdapter.ViewHold
     public int getItemCount() {
         return this.pusheenArrayList.size();
     }
+
+
 }

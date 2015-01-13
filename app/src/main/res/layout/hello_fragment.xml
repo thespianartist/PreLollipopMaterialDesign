@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="#efefef"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:textColor="@color/accent_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Hola Fragmento"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="15dp"
+        android:id="@+id/image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/pusheen"
+        android:layout_gravity="center_horizontal" />
+
+
+</LinearLayout>

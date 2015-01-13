@@ -9,4 +9,9 @@
 
     </style>
 
+    <style name="SlidingTextViewStyle" parent="@android:style/Widget.TextView">
+        <item name="android:background">#000000</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
 </resources>
