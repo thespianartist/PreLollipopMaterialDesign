@@ -4,7 +4,7 @@ package la.mejorando.prelollipopmaterialdesign.fragments;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,8 +19,12 @@ import la.mejorando.prelollipopmaterialdesign.models.Pusheen;
 
 public class PusheenFragment extends Fragment {
 
-    public PusheenFragment() {
-        // Required empty public constructor
+    ArrayList<Pusheen> pusheensData;
+
+
+
+    public PusheenFragment(){
+
     }
 
 
@@ -32,17 +36,9 @@ public class PusheenFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.pusheen_fragment, container, false);
-        return view;
 
-    }
+        View pusheenView = inflater.inflate(R.layout.pusheen_fragment, container, false);
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        //Creando el Dataset, recuerda que esto no siempre es hardcodeado
         ArrayList<Pusheen> pusheens = new ArrayList<>();
 
         Pusheen pusheen = new Pusheen();
@@ -79,7 +75,7 @@ public class PusheenFragment extends Fragment {
         //Configuración del recyclerView, con nuestro dataSet y nuestro Adapter
 
         //Aqui buscamos el Widget recyclerView
-        RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.my_recycler_view);
+        RecyclerView recyclerView = (RecyclerView) pusheenView.findViewById(R.id.my_recycler_view);
 
         //A pesar del tamaño de la pantalla, asegurar que los elementos se vean siempre igual.
         recyclerView.setHasFixedSize(true);
@@ -94,6 +90,23 @@ public class PusheenFragment extends Fragment {
         //caso setLayoutManager() esta  configurado como grilla de una columna, es por es eso que se ve
         //como fila, recordar que el mismo resultado se obtiene con
         // recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),1));
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        layoutManager.scrollToPosition(0);
+        recyclerView.setLayoutManager(layoutManager);
+
+        return pusheenView;
+
+
     }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+
+
+
+    }
+
 }
